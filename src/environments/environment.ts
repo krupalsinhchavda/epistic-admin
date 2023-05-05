@@ -4,8 +4,8 @@
 
 export const environment = {
   production: true,
-  encryption: false,
- baseUrl: 'http://episticadmin.epistic.net/api/'
+
+  baseUrl: 'http://episticadmin.epistic.net/api/'
 };
 
 /*

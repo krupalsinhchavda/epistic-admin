@@ -1,0 +1,6 @@
+{
+  "/api": {
+  "target": "http://episticadmin.epistic.net/api/",
+  "secure": false
+  }
+  }

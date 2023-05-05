@@ -13,6 +13,14 @@
             <a (click)="addExpandClass('0')" routerLink="/dashboard" routerLinkActive="active">
                 <mat-icon>home</mat-icon><span>Dashboard</span></a>
         </li>
+        <!-- <li [class.expand]="showMenu === 'profile'" class="submenu">
+            <a (click)="addExpandClass('profile')" href="javascript:void(0)">
+                <mat-icon>assignment_ind</mat-icon><span>profile</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a routerLinkActive="active" routerLink="profile/viewProfile">view profile</a></li>
+                <li><a routerLinkActive="active" routerLink="profile/changePassword">change password</a></li>
+            </ul>
+        </li> -->
         <li [class.expand]="showMenu === 'Employee'" class="submenu">
             <a (click)="addExpandClass('Employee')" href="javascript:void(0)">
                 <mat-icon>account_circle</mat-icon><span>User</span><span class="menu-arrow"></span></a>
@@ -29,30 +37,30 @@
         </li>
         <li [class.expand]="showMenu === 'category'" class="submenu">
             <a (click)="addExpandClass('category')" href="javascript:void(0)">
-                <mat-icon>developer_mode</mat-icon><span>Project</span><span class="menu-arrow"></span></a>
+                <mat-icon>dashboard</mat-icon><span>category</span><span class="menu-arrow"></span></a>
             <ul>
-                <li><a routerLinkActive="active" routerLink="category/category-list">Project list</a></li>
+                <li><a routerLinkActive="active" routerLink="category/category-list">category list</a></li>
             </ul>
         </li>
         <li [class.expand]="showMenu === 'product'" class="submenu">
             <a (click)="addExpandClass('product')" href="javascript:void(0)">
-                <mat-icon>access_time</mat-icon><span>Time Sheet list</span><span class="menu-arrow"></span></a>
+                <mat-icon>store</mat-icon><span>product</span><span class="menu-arrow"></span></a>
             <ul>
-                <li><a routerLinkActive="active" routerLink="product/product-list">Time Sheet list</a></li>
+                <li><a routerLinkActive="active" routerLink="product/product-list">product list</a></li>
             </ul>
         </li>
         <li [class.expand]="showMenu === 'contentManagement'" class="submenu">
             <a (click)="addExpandClass('contentManagement')" href="javascript:void(0)">
-                <mat-icon>event</mat-icon><span>Leave Approval </span><span class="menu-arrow"></span></a>
+                <mat-icon>assignment</mat-icon><span>content Management</span><span class="menu-arrow"></span></a>
             <ul>
-                <li><a routerLinkActive="active" routerLink="contentManagement/content-list">Add Leave</a></li>
+                <li><a routerLinkActive="active" routerLink="contentManagement/content-list">add content</a></li>
             </ul>
         </li>
         <li [class.expand]="showMenu === 'Enquirydata'" class="submenu">
             <a (click)="addExpandClass('Enquirydata')" href="javascript:void(0)">
-                <mat-icon>timeline</mat-icon><span>Timeline</span><span class="menu-arrow"></span></a>
+                <mat-icon>live_help</mat-icon><span>Enquiry data</span><span class="menu-arrow"></span></a>
             <ul>
-                <li><a routerLinkActive="active" routerLink="enquirydata/enquirydata-list"> list</a></li>
+                <li><a routerLinkActive="active" routerLink="enquirydata/enquirydata-list">Enquiry data list</a></li>
             </ul>
         </li>
         <li [class.expand]="showMenu === 'contactdata'" class="submenu">
@@ -87,6 +95,16 @@
             <a (click)="addExpandClass('0')" routerLink="/event" routerLinkActive="active">
                 <mat-icon>event</mat-icon><span>event</span></a>
         </li>
+        <li>
+          <a (click)="addExpandClass('0')" routerLink="/attendence" routerLinkActive="active">
+              <mat-icon>Attendence</mat-icon><span>Attendence</span></a>
+      </li> <li>
+        <a (click)="addExpandClass('0')" routerLink="/timesheet" routerLinkActive="active">
+            <mat-icon>Timesheet</mat-icon><span>Timesheet</span></a>
+    </li> <li>
+      <a (click)="addExpandClass('0')" routerLink="/leave" routerLinkActive="active">
+          <mat-icon>Leave</mat-icon><span>Leave</span></a>
+  </li>
     </ul>
 
 

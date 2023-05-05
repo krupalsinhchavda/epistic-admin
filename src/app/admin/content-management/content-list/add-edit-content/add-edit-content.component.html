@@ -1,42 +1,33 @@
 <div class="form-round-block card">
     <form [formGroup]="FormName" (ngSubmit)="onsubmit()" class="form" novalidate>
         <mat-icon mat-dialog-close>close</mat-icon>
-        <h1 class="form-title">Add/Edit - Leave Approval </h1>
+        <h1 class="form-title">add/edit - content </h1>
         <div class="row mb-3">
             <div class="col-12 col-md-6 col-xl-6">
                 <div class="form-group">
-                    <label for="">Employee id</label>
-                    <input type="text" class="form-control" readonly>
+                    <label for="">Page </label>
+                    <select class="form-control" name="" id="">
+                        <option value="">about us</option>
+                        <option value="">privecy</option>
+                        <option value="">terms</option>
+                   </select>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-6">
                 <div class="form-group">
-                    <label for="">Subject</label>
-                    <input type="text" class="form-control">
+                    <label for="">title </label>
+                    <input type="text" class="form-control" name="" id="">
                 </div>
             </div>
             <div class="col-12">
                 <div class="form-group">
-                    <label for="">Start Date</label>
-                    <input type="date" class="form-control">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <label for="">End Date</label>
-                    <input type="date" class="form-control">
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group float-start">
-                    <label for="">Approved</label>
-                    <input type="checkbox" class=" float-start">
-                    <mat-checkbox id="check" name="check" [(ngModel)]="model.check" [ngModelOptions]="{standalone: true}" checked>Approved or Not</mat-checkbox>
+                    <label for="">Add content </label>
+                    <ck-editor name="editor1" formControlName="inputfield" skin="moono-lisa" language="en" [fullPage]="false"></ck-editor>
                 </div>
             </div>
         </div>
         <div class="form-action-btn">
-            <button [disabled]="!FormName.valid" type="submit" class="btn">submit</button>
+            <button [disabled]="!FormName.valid" type="submit" class="btn">add</button>
             <button [disabled]="!FormName.valid" type="submit" class="btn">update</button>
             <button type="button" mat-dialog-close class="btn cancel">cancel</button>
         </div>

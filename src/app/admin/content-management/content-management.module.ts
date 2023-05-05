@@ -5,7 +5,7 @@ import { ContentManagementRoutingModule } from './content-management-routing.mod
 import { ContentManagementComponent } from './content-management.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { AddEditContentComponent } from './content-list/add-edit-content/add-edit-content.component';
-
+import { ViewContentComponent } from './content-list/view-content/view-content.component';
 import { DeleteContentComponent } from './content-list/delete-content/delete-content.component';
 
 @NgModule({
@@ -13,7 +13,7 @@ import { DeleteContentComponent } from './content-list/delete-content/delete-con
     ContentManagementComponent,
     ContentListComponent,
     AddEditContentComponent,
-  
+    ViewContentComponent,
     DeleteContentComponent,
   ],
   imports: [

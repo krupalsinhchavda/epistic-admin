@@ -8,7 +8,9 @@ import { TestimonialComponent } from './testimonial/testimonial.component';
 import { BlogComponent } from './blog/blog.component';
 import { EventComponent } from './event/event.component';
 import { FaqComponent } from './faq/faq.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AttendenceComponent } from './attendence/attendence.component';
+import { TimesheetComponent } from './timesheet/timesheet.component';
+import { LeaveComponent } from './leave/leave.component';
 
 
 
@@ -32,7 +34,9 @@ const routes: Routes = [
       { path: 'faq', component: FaqComponent },
       { path: 'blog', component: BlogComponent },
       { path: 'event', component: EventComponent },
-      // { path: '**', component: PageNotFoundComponent },
+      { path: 'attendence', component: AttendenceComponent },
+      { path: 'timesheet', component: TimesheetComponent },
+      { path: 'leave', component: LeaveComponent }
     ]
   },
 

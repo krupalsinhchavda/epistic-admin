@@ -3,7 +3,160 @@
         <div class="dashboard-header-left">
             <img src="assets/img/user.png" alt="">
             <h1>Welcome back, Brian!
+                <span><mat-icon class="mr-2">notifications</mat-icon>  you have 2 new messages and 15 new tasks</span>
             </h1>
         </div>
-       </div>
+        <!-- <div class="dashboard-header-right">
+            <button class="btn" (click)="showloader()">loader</button>
+            <button (click)="showtoastr()" class="btn">toastr</button>
+            <button class="btn">Download</button>
+        </div>
+    </div>
+
 </div>
+
+<div class="dashboard-tabber">
+    <div class="container">
+        <mat-tab-group>
+            <mat-tab label="tab 1">
+                <div class="container">
+                    <div class="row card-list">
+                        <div class="col-md-3">
+                            <div class="rouded-block card">
+                                <label for="">Summary</label>
+                                <h1 style="color: #3b86f2;">24</h1>
+                                <h3>Due Tasks</h3>
+                                <span>Completed:<strong>13</strong></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="rouded-block card">
+                                <label for="">Overdue</label>
+                                <h1 style="color: #ed4347;">35</h1>
+                                <h3>Tasks</h3>
+                                <span>Completed:<strong>13</strong></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="rouded-block card">
+                                <label for="">Issues</label>
+                                <h1 style="color: #f49c2b;">10</h1>
+                                <h3>Open</h3>
+                                <span>Completed:<strong>13</strong></span>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="rouded-block card">
+                                <label for="">Features</label>
+                                <h1 style="color: #2dc465;">19</h1>
+                                <h3>Proposals</h3>
+                                <span>Completed:<strong>13</strong></span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-round-block card mb-5">
+                                <h1 class="form-title">Summary</h1>
+                                <canvas baseChart width="600" height="400" [type]="'line'" [data]="lineChartData" [options]="lineChartOptions" [legend]="lineChartLegend"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-round-block card mb-5">
+                                <h1 class="form-title">Schedule</h1>
+                                <mat-accordion>
+                                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Group Meeting
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                            </mat-panel-description>
+                                        </mat-expansion-panel-header>
+                                        <div>
+                                            <mat-icon>access_time</mat-icon> <span>in 32 minutes</span></div>
+                                    </mat-expansion-panel>
+                                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Group Meeting
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                            </mat-panel-description>
+                                        </mat-expansion-panel-header>
+                                        <div>
+                                            <mat-icon>access_time</mat-icon> <span>in 32 minutes</span></div>
+                                    </mat-expansion-panel>
+                                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Group Meeting
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                            </mat-panel-description>
+                                        </mat-expansion-panel-header>
+                                        <div>
+                                            <mat-icon>access_time</mat-icon> <span>in 32 minutes</span></div>
+                                    </mat-expansion-panel>
+                                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Group Meeting
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                            </mat-panel-description>
+                                        </mat-expansion-panel-header>
+                                        <div>
+                                            <mat-icon>access_time</mat-icon> <span>in 32 minutes</span></div>
+                                    </mat-expansion-panel>
+                                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Group Meeting
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                            </mat-panel-description>
+                                        </mat-expansion-panel-header>
+                                        <div>
+                                            <mat-icon>access_time</mat-icon> <span>in 32 minutes</span></div>
+                                    </mat-expansion-panel>
+                                    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                Group Meeting
+                                            </mat-panel-title>
+                                            <mat-panel-description>
+                                                Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                                            </mat-panel-description>
+                                        </mat-expansion-panel-header>
+                                        <div>
+                                            <mat-icon>access_time</mat-icon> <span>in 32 minutes</span></div>
+                                    </mat-expansion-panel>
+                                </mat-accordion>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="tab 2">
+                <div class="form-round-block card mb-5">
+                    <img class="work-in-progres" src="assets/img/work-in-progres.png" alt="">
+                </div>
+            </mat-tab>
+            <mat-tab label="tab 3">
+                <div class="form-round-block card mb-5">
+                    <img class="work-in-progres" src="assets/img/work-in-progres.png" alt="">
+                </div>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+</div>
+
+<mat-spinner *ngIf="isloader"></mat-spinner> -->

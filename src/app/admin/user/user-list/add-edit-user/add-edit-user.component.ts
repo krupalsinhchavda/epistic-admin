@@ -61,6 +61,7 @@ export class AddEditUserComponent implements OnInit {
       console.log("hello");
     }
     this.isSubmitted = true;
+    // this.router.navigate(["/admin/lead-source/lead-source-list"]);
     if(this.editMode){
       this.commonservice.updateCategory(this.editUserid,postData).subscribe({next:(responseData:any)=>
         this.getFetch()

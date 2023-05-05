@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { AddEditProductComponent } from './add-edit-product/add-edit-product.component';
-
+import { ViewProductComponent } from './view-product/view-product.component';
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { DeleteProductComponent } from './delete-product/delete-product.componen
 })
 export class ProductListComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['id', 'subject', 'startTime', 'endTime', 'date','action'];
+  displayedColumns: string[] = ['position', 'productImgUrl', 'productname', 'SKU', 'category', 'brand', 'price', 'unit', 'Qty', 'createdBy', 'action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -47,7 +47,12 @@ export class ProductListComponent implements OnInit, AfterViewInit {
     });
   }
 
- 
+  view() {
+    this.dialog.open(ViewProductComponent, {
+      width: '1000px',
+      autoFocus: false
+    });
+  }
 
   delete() {
     this.dialog.open(DeleteProductComponent, {
@@ -59,24 +64,29 @@ export class ProductListComponent implements OnInit, AfterViewInit {
 }
 
 export interface PeriodicElement {
-  id: number;
-  subject: string;
-  startTime: string;
-  endTime: string;
-  date: string;
+  position: number;
+  productImgUrl: string;
+  productname: string;
+  SKU: string;
+  category: string;
+  brand: string;
+  price: string
+  unit: string
+  Qty: string
+  createdBy: string;
   action: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { id: 1, subject: 'learn html', startTime: '22:12', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 2, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 3, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 4, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 5, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 6, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 7, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 8, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 9, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
-  { id: 10, subject: 'learn html', startTime: 'PT001', endTime: 'Computers', date: 'N/D', action: 0 },
+  { position: 1, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 2, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 3, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 4, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 5, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 6, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 7, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 8, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 9, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
+  { position: 10, productImgUrl: 'macbook.jpg', productname: 'macbook', SKU: 'PT001', category: 'Computers', brand: 'N/D', price: '1500', unit: 'pc', Qty: '100.00', createdBy: 'Admin', action: 0 },
 
 ];

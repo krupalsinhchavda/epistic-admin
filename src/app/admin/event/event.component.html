@@ -1,0 +1,69 @@
+<div class="container mt-5">
+    <div class="form-round-block card">
+        <form class="form">
+            <mat-icon (click)="add()">add</mat-icon>
+            <h1 class="form-title">event list</h1>
+            <mat-form-field class="w-100">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+            </mat-form-field>
+
+            <table mat-table [dataSource]="dataSource" class="border">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef>No.</th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="eventImgurl">
+                    <th mat-header-cell *matHeaderCellDef>blog Img </th>
+                    <td mat-cell *matCellDef="let element"> <img class="table-td-product-img" src="assets/img/{{element.eventImgurl}}" alt=""> </td>
+                </ng-container>
+
+
+
+                <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef>title </th>
+                    <td mat-cell *matCellDef="let element"> <span class="table-long-content">{{element.title}}</span> </td>
+                </ng-container>
+
+
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef>date </th>
+                    <td mat-cell *matCellDef="let element"> <span class="table-long-content">{{element.date}}</span> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="postedBy">
+                    <th mat-header-cell *matHeaderCellDef>postedBy </th>
+                    <td mat-cell *matCellDef="let element"> <span class="table-long-content">{{element.postedBy}}</span> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="Description">
+                    <th mat-header-cell *matHeaderCellDef>Description </th>
+                    <td mat-cell *matCellDef="let element"> <span class="table-long-content">{{element.Description}}</span> </td>
+                </ng-container>
+
+                <ng-container matColumnDef="venue">
+                    <th mat-header-cell *matHeaderCellDef>venue </th>
+                    <td mat-cell *matCellDef="let element"> <span class="table-long-content">{{element.venue}}</span> </td>
+                </ng-container>
+
+
+
+                <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>action</th>
+                    <td class="action-td" mat-cell *matCellDef="let element">
+                        <mat-icon (click)="view()">remove_red_eye</mat-icon>
+                        <mat-icon (click)="edit()">edit</mat-icon>
+                        <mat-icon (click)="delete()">delete</mat-icon>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                <tr class="mat-row" *matNoDataRow>
+                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                </tr>
+            </table>
+            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+            </mat-paginator>
+        </form>
+    </div>
+</div>

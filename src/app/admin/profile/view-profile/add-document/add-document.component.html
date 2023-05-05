@@ -1,0 +1,29 @@
+<div class="form-round-block card">
+    <form [formGroup]="FormName" (ngSubmit)="onsubmit()" class="form" novalidate>
+        <mat-icon mat-dialog-close>close</mat-icon>
+        <h1 class="form-title">Add Document</h1>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="">input field</label>
+                    <input formControlName="inputfield" type="text" class="form-control">
+                    <div class="main-error" *ngIf="!FormName.controls['inputfield']?.valid && (FormName.controls['inputfield']?.dirty||FormName.controls['inputfield']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['inputfield']['errors']!['required']">
+                            inputfield is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="">Choose file</label>
+                    <input type="file" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="form-action-btn">
+            <button type="submit" class="btn">Add</button>
+            <button type="button" mat-dialog-close class="btn cancel">cancel</button>
+        </div>
+    </form>
+</div>

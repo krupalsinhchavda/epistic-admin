@@ -1,0 +1,47 @@
+<div class="form-round-block card">
+    <form [formGroup]="FormName" (ngSubmit)="onsubmit()" class="form" novalidate>
+        <mat-icon mat-dialog-close>close</mat-icon>
+        <h1 class="form-title">add/edit - Time Sheet </h1>
+        <div class="row">
+
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <div class="form-group">
+                        <label for="">Employee Id </label>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">Subject / Work Topic </label>
+                    <input type="text" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">Start Time </label>
+                    <input type="time" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">End time </label>
+                    <input type="time" class="form-control">
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">Date </label>
+                    <input type="date" class="form-control">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-action-btn">
+            <button [disabled]="!FormName.valid" type="submit" class="btn">submit</button>
+            <button [disabled]="!FormName.valid" type="submit" class="btn">update</button>
+            <button type="button" mat-dialog-close class="btn cancel">cancel</button>
+        </div>
+    </form>
+</div>

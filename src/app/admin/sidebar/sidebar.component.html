@@ -1,0 +1,94 @@
+<div class="sidebar-inner">
+    <a routerLink="/dashboard" class="logo">
+        <img src="assets/img/logo.png" alt="">
+    </a>
+    <div class="sidebar-user">
+        <img class="sidebar-user-pic" src="assets/img/user.png" alt="">
+        <span class="sidebar-use-name">Brian Hughes</span>
+        <span class="sidebar-use-mail">hughes.brian@company.com</span>
+    </div>
+
+    <ul class="sidebar-menu">
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/dashboard" routerLinkActive="active">
+                <mat-icon>home</mat-icon><span>Dashboard</span></a>
+        </li>
+        <li [class.expand]="showMenu === 'Employee'" class="submenu">
+            <a (click)="addExpandClass('Employee')" href="javascript:void(0)">
+                <mat-icon>account_circle</mat-icon><span>User</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li> <a routerLinkActive="active" routerLink="user/user-list">Employee list</a></li>
+            </ul>
+        </li>
+        <li [class.expand]="showMenu === 'Roles'" class="submenu">
+            <a (click)="addExpandClass('Roles')" href="javascript:void(0)">
+                <mat-icon>how_to_reg</mat-icon><span>Roles</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li> <a routerLinkActive="active" routerLink="roles/roles-list">roles list</a></li>
+            </ul>
+        </li>
+        <li [class.expand]="showMenu === 'category'" class="submenu">
+            <a (click)="addExpandClass('category')" href="javascript:void(0)">
+                <mat-icon>developer_mode</mat-icon><span>Project</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a routerLinkActive="active" routerLink="category/category-list">Project list</a></li>
+            </ul>
+        </li>
+        <li [class.expand]="showMenu === 'product'" class="submenu">
+            <a (click)="addExpandClass('product')" href="javascript:void(0)">
+                <mat-icon>access_time</mat-icon><span>Time Sheet list</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a routerLinkActive="active" routerLink="product/product-list">Time Sheet list</a></li>
+            </ul>
+        </li>
+        <li [class.expand]="showMenu === 'contentManagement'" class="submenu">
+            <a (click)="addExpandClass('contentManagement')" href="javascript:void(0)">
+                <mat-icon>event</mat-icon><span>Leave Approval </span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a routerLinkActive="active" routerLink="contentManagement/content-list">Add Leave</a></li>
+            </ul>
+        </li>
+        <li [class.expand]="showMenu === 'Enquirydata'" class="submenu">
+            <a (click)="addExpandClass('Enquirydata')" href="javascript:void(0)">
+                <mat-icon>timeline</mat-icon><span>Timeline</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a routerLinkActive="active" routerLink="enquirydata/enquirydata-list"> list</a></li>
+            </ul>
+        </li>
+        <li [class.expand]="showMenu === 'contactdata'" class="submenu">
+            <a (click)="addExpandClass('contactdata')" href="javascript:void(0)">
+                <mat-icon>contact_mail</mat-icon><span>contact data</span><span class="menu-arrow"></span></a>
+            <ul>
+                <li><a routerLinkActive="active" routerLink="contactdata/contactdata-list">contact data list</a></li>
+            </ul>
+        </li>
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/banner-management" routerLinkActive="active">
+                <mat-icon>insert_photo</mat-icon><span>banner management</span></a>
+        </li>
+
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/our-team" routerLinkActive="active">
+                <mat-icon>group</mat-icon><span>our team</span></a>
+        </li>
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/testimonial" routerLinkActive="active">
+                <mat-icon>stars</mat-icon><span>testimonial</span></a>
+        </li>
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/faq" routerLinkActive="active">
+                <mat-icon>account_box</mat-icon><span>faq</span></a>
+        </li>
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/blog" routerLinkActive="active">
+                <mat-icon>border_color</mat-icon><span>blog</span></a>
+        </li>
+        <li>
+            <a (click)="addExpandClass('0')" routerLink="/event" routerLinkActive="active">
+                <mat-icon>event</mat-icon><span>event</span></a>
+        </li>
+    </ul>
+
+
+
+</div>

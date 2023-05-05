@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="card mt-5">
+  <div class="card-body">
+<form [formGroup]="myForm" (ngSubmit)="submitForm(myForm.value)" class="ms-3">
+  <div class="error-msg" *ngIf="isFormSubmitted && myForm.controls['gender']&& myForm.controls['fname']&& myForm.controls['lname']&& myForm.controls['email']&& myForm.controls['ipaddress']&& myForm.controls['emptype']&& myForm.controls['role'].errors?.['required']">
+    Please Fill Up Form
+  </div>
+  <h1 style="text-align: center;">Add Employee</h1>
+<label class="form-label col-sm-3 mt-2 col-25">First Name</label>
+        <input type="text" formControlName="fname" class="form-control col-65"><br>
+        <label class="form-label col-sm-3 mt-2 col-25">Last Name</label>
+        <input type="text" formControlName="lname" class="form-control col-65"><br>
+        <label class="form-label col-sm-3 mt-2 col-25">Email</label>
+        <input type="email" class="form-control col-65" formControlName="email"><br>
+        <mat-radio-group aria-label="Select an option"  formControlName="gender">Gender:<br>
+          <mat-radio-button class="radio-3" *ngFor="let gen of genders"  [value]="gen">{{gen}}</mat-radio-button><br>
+        </mat-radio-group>
+        <mat-form-field appearance="fill" class="example-full-width">
+          <mat-label>DOB:</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="dob">
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+          <mat-datepicker #picker ></mat-datepicker>
+        </mat-form-field><br>
+        <mat-form-field appearance="fill">
+          <mat-label>Roles:</mat-label>
+          <mat-select formControlName="role">
+            <mat-option>None</mat-option>
+            <mat-option *ngFor="let state of roles;" [value]="state">{{state}}</mat-option>
+          </mat-select>
+        </mat-form-field><br>
+
+        <!-- <label>Role:</label>
+        <select name="role" class="rounded-inputs20 select-select col-md-3" formControlName="role">
+          <option *ngFor="let role of roles">{{role}}</option>
+          </select> -->
+          <mat-form-field appearance="fill">
+            <mat-label>Employee Type:</mat-label>
+            <mat-select formControlName="emptype">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let state of emptypes" [value]="state">{{state}}</mat-option>
+            </mat-select>
+          </mat-form-field><br>
+          <label class="form-label col-sm-3 mt-2 col-25">Ip-Address</label>
+          <input type="text" class="form-control col col-65" formControlName="ipaddress"><br>
+        <label class="form-label col-sm-3 mt-2 col-25">Password</label>
+        <input type="password" class="form-control col col-65" formControlName="password"><br>
+        <button type="submit" class="btn btn-dark float-end w-25 mt-5">{{editMode?'Update':'Submit'}}</button>
+        <button type="reset" class="btn btn-dark float-end w-25 mt-5">reset</button>
+        <button type="back" class="btn btn-dark float-end w-25 mt-5">back</button>
+
+</form>
+</div>
+</div>
+</div>

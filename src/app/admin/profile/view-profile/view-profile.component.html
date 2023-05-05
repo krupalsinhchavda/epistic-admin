@@ -1,0 +1,278 @@
+<div class="profile-header mb-4">
+    <div class="profile-header-top">
+        <img src="assets/img/cover.jpg" alt="">
+    </div>
+    <div class="profile-header-bottom">
+        <div class="container">
+            <div class="profile-user-img">
+                <mat-icon (click)="file.click()">edit</mat-icon>
+                <input #file id="profileimginput" type="file" (change)="onfileselected($event)" accept=".png, .jpg, .jpeg">
+                <img (click)="file.click()" src="assets/img/user.png" alt="">
+            </div>
+            <div class="profile-user-detail">
+                <span class="user-name">Brian Hughes</span>
+                <span class="user-mail">hughes.brian@company.com</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="page-profile">
+    <div class="container">
+        <div class="form-round-block card mb-5">
+            <mat-tab-group>
+                <mat-tab label="About">
+                    <div class="form-round-block card mb-5">
+                        <form action="" class="form">
+                            <mat-icon (click)="editprofile()">edit</mat-icon>
+                            <h1 class="form-title">Basic Information</h1>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">First Name</label>
+                                        <p class="list-title">Brian</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Last Name</label>
+                                        <p class="list-title">Hughes</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Middle Name</label>
+                                        <p class="list-title">Maynard</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Phone</label>
+                                        <p class="list-title">+1 564465654445</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Personal Email</label>
+                                        <p class="list-title">marie@gmail.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Date of Birth</label>
+                                        <p class="list-title">16th June 1991</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Gender</label>
+                                        <p class="list-title">Female</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Marital Status</label>
+                                        <p class="list-title">Unmarried</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <form action="" class="form">
+                            <mat-icon (click)="editprofile()">edit</mat-icon>
+                            <h1 class="form-title">Employee Information</h1>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Employee Enrollment ID</label>
+                                        <p class="list-title">XYZ - 1111</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Date of Joining</label>
+                                        <p class="list-title">16th July 2017</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Company Email</label>
+                                        <p class="list-title">marie@xyz.com</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Department</label>
+                                        <p class="list-title">Design</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Designation</label>
+                                        <p class="list-title">UI / UX Designer</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Reporting Employee</label>
+                                        <p class="list-title">Darlene C. Larsen</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Type of Employee</label>
+                                        <p class="list-title">Full Time</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <hr>
+                        <form action="" class="form">
+                            <mat-icon (click)="editprofile()">edit</mat-icon>
+                            <h1 class="form-title">Contact Information</h1>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Address Line 1</label>
+                                        <p class="list-title">2654 Kooter Lane</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Address Line 2</label>
+                                        <p class="list-title">Pieter Feddesstraat 90</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">City</label>
+                                        <p class="list-title">San Antonio</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">State</label>
+                                        <p class="list-title">Texas</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Zip Code</label>
+                                        <p class="list-title">78209</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Country</label>
+                                        <p class="list-title">United States</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </mat-tab>
+
+                <mat-tab label="Documents">
+                    <div class="form-round-block card mb-5">
+                        <form class="form">
+                            <mat-icon (click)="adddocument()">add</mat-icon>
+                            <h1 class="form-title">Documents</h1>
+                            <mat-form-field class="w-100">
+                                <mat-label>Filter</mat-label>
+                                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
+                            </mat-form-field>
+
+                            <table mat-table [dataSource]="dataSource" class="border">
+                                <ng-container matColumnDef="position">
+                                    <th mat-header-cell *matHeaderCellDef> No. </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="filename">
+                                    <th mat-header-cell *matHeaderCellDef> file name </th>
+                                    <td mat-cell *matCellDef="let element"> {{element.filename}} </td>
+                                </ng-container>
+                                <ng-container matColumnDef="action">
+                                    <th mat-header-cell *matHeaderCellDef> action </th>
+                                    <td class="action-td" mat-cell *matCellDef="let element">
+                                        <mat-icon>remove_red_eye</mat-icon>
+                                        <mat-icon (click)="adddocument()">edit</mat-icon>
+                                        <mat-icon (click)="delete()">delete</mat-icon>
+                                    </td>
+                                </ng-container>
+                                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                                <tr class="mat-row" *matNoDataRow>
+                                    <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+                                </tr>
+                            </table>
+                            <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Select page of periodic elements">
+                            </mat-paginator>
+                        </form>
+                    </div>
+
+                </mat-tab>
+
+                <mat-tab label="Salary">
+                    <div class="form-round-block card mb-5">
+                        <form action="" class="form">
+                            <mat-icon>edit</mat-icon>
+                            <h1 class="form-title">Salary Information</h1>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Actual Hourly Salary</label>
+                                        <p class="list-title">$25/hr</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Total Monthly Salary</label>
+                                        <p class="list-title">$6000</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Annual Gross Salary</label>
+                                        <p class="list-title">$72000</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Federal Withholding</label>
+                                        <p class="list-title">$12500</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Medicare</label>
+                                        <p class="list-title">$1800</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Social Security</label>
+                                        <p class="list-title">$2500</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Allowances</label>
+                                        <p class="list-title">$0</p>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-xl-4">
+                                    <div class="form-group">
+                                        <label for="">Add. Allowances</label>
+                                        <p class="list-title">$0</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </mat-tab>
+
+            </mat-tab-group>
+        </div>
+    </div>
+</div>

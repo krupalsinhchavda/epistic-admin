@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { AddEditCategoryComponent } from './add-edit-category/add-edit-category.component';
-import { ViewCategoryComponent } from './view-category/view-category.component';
 import { DeleteCategoryComponent } from './delete-category/delete-category.component';
 
 @Component({
@@ -13,7 +12,7 @@ import { DeleteCategoryComponent } from './delete-category/delete-category.compo
 })
 export class CategoryListComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['position', 'categoryImgUrl', 'categoryName', 'categoryCode', 'Description', 'createdBy', 'action'];
+  displayedColumns: string[] = ['id','projectname', 'projectdes', 'createdon', 'modifiedon', 'action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -47,13 +46,6 @@ export class CategoryListComponent implements OnInit, AfterViewInit {
     });
   }
 
-  view() {
-    this.dialog.open(ViewCategoryComponent, {
-      width: '1000px',
-      autoFocus: false
-    });
-  }
-
   delete() {
     this.dialog.open(DeleteCategoryComponent, {
       width: '400px',
@@ -64,25 +56,26 @@ export class CategoryListComponent implements OnInit, AfterViewInit {
 }
 
 export interface PeriodicElement {
-  position: number;
-  categoryImgUrl: string;
-  categoryName: string;
-  categoryCode: string;
-  Description: string;
-  createdBy: string;
+  id: number;
+  projectname: string;
+  projectdes: string;
+  createdon: string;
+  modifiedon: string;
   action: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, categoryImgUrl: 'Appliances.jpg', categoryName: 'Appliances', categoryCode: 'CT001', Description: 'Appliances Description', createdBy: 'Admin', action: 0 },
-  { position: 2, categoryImgUrl: 'Appliances.jpg', categoryName: 'Clothing', categoryCode: 'CT002', Description: 'Clothing Description', createdBy: 'Admin', action: 0 },
-  { position: 3, categoryImgUrl: 'Appliances.jpg', categoryName: 'Computers', categoryCode: 'CT003', Description: 'Computers Description', createdBy: 'Admin', action: 0 },
-  { position: 4, categoryImgUrl: 'Appliances.jpg', categoryName: 'Health', categoryCode: 'CT004', Description: 'Health Description', createdBy: 'Admin', action: 0 },
-  { position: 5, categoryImgUrl: 'Appliances.jpg', categoryName: 'Jewellery', categoryCode: 'CT005', Description: 'Jewellery Description', createdBy: 'Admin', action: 0 },
-  { position: 6, categoryImgUrl: 'Appliances.jpg', categoryName: 'Industrial', categoryCode: 'CT006', Description: 'Industrial Description', createdBy: 'Admin', action: 0 },
-  { position: 7, categoryImgUrl: 'Appliances.jpg', categoryName: 'Movies', categoryCode: 'CT007', Description: 'Movies Description', createdBy: 'Admin', action: 0 },
-  { position: 8, categoryImgUrl: 'Appliances.jpg', categoryName: 'Music', categoryCode: 'CT008', Description: 'Music Description', createdBy: 'Admin', action: 0 },
-  { position: 9, categoryImgUrl: 'Appliances.jpg', categoryName: 'Shoes', categoryCode: 'CT009', Description: 'Shoes Description', createdBy: 'Admin', action: 0 },
-  { position: 10, categoryImgUrl: 'Appliances.jpg', categoryName: 'Watches', categoryCode: 'CT010', Description: 'Watches Description', createdBy: 'Admin', action: 0 }
+  { id: 1, projectname: 'Appliances', projectdes: 'CT001', createdon: '22-02-2023 ', modifiedon: '25-02-2023 ', action: 0 },
+  { id: 2, projectname: 'Clothing', projectdes: 'CT002', createdon: '22-02-2023  ', modifiedon: '25-02-2023 ', action: 0 },
+  { id: 3, projectname: 'Computers', projectdes: 'CT003', createdon: '22-02-2023  ', modifiedon: '25-02-2023 ', action: 0 },
+  { id: 4, projectname: 'Health', projectdes: 'CT004', createdon: '22-02-2023  ', modifiedon: '25-02-2023 ', action: 0 },
+  { id: 5, projectname: 'Health', projectdes: 'CT004', createdon: '22-02-2023  ', modifiedon: '25-02-2023 ', action: 0 },
+  { id: 6, projectname: 'Health', projectdes: 'CT004', createdon: '22-02-2023  ', modifiedon: '25-02-2023 ', action: 0 },
+  // { id: 5, projectname: 'Jewellery', projectdes: 'CT005', createdon: ' ', modifiedon: '25-02-2023 ', action: 0 },
+  // { id: 6, projectname: 'Industrial', projectdes: 'CT006', createdon: ' ', modifiedon: '25-02-2023 ', action: 0 },
+  // { id: 7, projectname: 'Movies', projectdes: 'CT007', createdon: ' ', modifiedon: '25-02-2023 ', action: 0 },
+  // { id: 8, projectname: 'Music', projectdes: 'CT008', createdon: ' ', modifiedon: '25-02-2023 ', action: 0 },
+  // { id: 9, projectname: 'Shoes', projectdes: 'CT009', createdon: ' ', modifiedon: '25-02-2023 ', action: 0 },
+  // { id: 10, projectname: 'Watches', projectdes: 'CT010', createdon: ' ', modifiedon: '25-02-2023 ', action: 0 }
 
 ];

@@ -4,7 +4,6 @@ import { CategoryRoutingModule } from './category-routing.module';
 import { CategoryComponent } from './category.component';
 import { CategoryListComponent } from './category-list/category-list.component';
 import { AddEditCategoryComponent } from './category-list/add-edit-category/add-edit-category.component';
-import { ViewCategoryComponent } from './category-list/view-category/view-category.component';
 import { DeleteCategoryComponent } from './category-list/delete-category/delete-category.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
@@ -14,7 +13,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CategoryComponent,
     CategoryListComponent,
     AddEditCategoryComponent,
-    ViewCategoryComponent,
+    
     DeleteCategoryComponent
   ],
   imports: [

@@ -17,7 +17,13 @@ export class AddEditCategoryComponent implements OnInit {
   }
 
   FormName = new FormGroup({
-    inputfield: new FormControl('', [Validators.required]),
+    projectid: new FormControl('', [Validators.required]),
+    projectname: new FormControl('', [Validators.required]),
+    projectdes: new FormControl('', [Validators.required]),
+    createdon: new FormControl('', [Validators.required]),
+    modifiedon: new FormControl('', [Validators.required]),
+    createdby: new FormControl('', [Validators.required]),
+    modifiedby: new FormControl('', [Validators.required]),
   })
 
   onsubmit() {

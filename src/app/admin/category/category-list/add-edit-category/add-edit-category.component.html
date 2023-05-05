@@ -1,45 +1,86 @@
 <div class="form-round-block card">
     <form [formGroup]="FormName" (ngSubmit)="onsubmit()" class="form" novalidate>
         <mat-icon mat-dialog-close>close</mat-icon>
-        <h1 class="form-title">add/edit - Category </h1>
+        <h1 class="form-title">add/edit - Project </h1>
         <div class="row">
 
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">input field</label>
-                    <input type="text" class="form-control" formControlName="inputfield">
-                    <div class="main-error" *ngIf="!FormName.controls['inputfield']?.valid && (FormName.controls['inputfield']?.dirty||FormName.controls['inputfield']?.touched)">
-                        <span class="error-msg" [hidden]="!FormName.controls['inputfield']['errors']!['required']">
-                            inputfield is required
+                    <label for="">Project Id</label>
+                    <input type="text" class="form-control" formControlName="projectid">
+                    <div class="main-error" *ngIf="!FormName.controls['projectid']?.valid && (FormName.controls['projectid']?.dirty||FormName.controls['projectid']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['projectid']['errors']!['required']">
+                            projectid is required
                         </span>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
+                    <label for="">Project Name</label>
+                    <input type="text" class="form-control" formControlName="projectname">
+                    <div class="main-error" *ngIf="!FormName.controls['projectname']?.valid && (FormName.controls['projectname']?.dirty||FormName.controls['projectname']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['projectname']['errors']!['required']">
+                            project name is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+            <div class="form-group">
+                <label for="">Project description</label>
+                <input type="text" class="form-control" formControlName="projectdes">
+                <div class="main-error" *ngIf="!FormName.controls['projectdes']?.valid && (FormName.controls['projectdes']?.dirty||FormName.controls['projectdes']?.touched)">
+                    <span class="error-msg" [hidden]="!FormName.controls['projectdes']['errors']!['required']">
+                        project description is required
+                    </span>
+                </div>
+            </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+            <div class="form-group">
+                <label for="">Created Date</label>
+                <input type="date" class="form-control" formControlName="createdon">
+                <div class="main-error" *ngIf="!FormName.controls['createdon']?.valid && (FormName.controls['createdon']?.dirty||FormName.controls['createdon']?.touched)">
+                    <span class="error-msg" [hidden]="!FormName.controls['createdon']['errors']!['required']">
+                        created date is required
+                    </span>
+                </div>
+            </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+            <div class="form-group">
+                <label for="">Modified Date</label>
+                <input type="date" class="form-control" formControlName="modifiedon">
+                <div class="main-error" *ngIf="!FormName.controls['modifiedon']?.valid && (FormName.controls['modifiedon']?.dirty||FormName.controls['modifiedon']?.touched)">
+                    <span class="error-msg" [hidden]="!FormName.controls['modifiedon']['errors']!['required']">
+                        Modified Day is required
+                    </span>
+                </div>
+            </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">Created by</label>
+                    <input type="number" class="form-control" formControlName="createdby">
+                    <div class="main-error" *ngIf="!FormName.controls['createdby']?.valid && (FormName.controls['createdby']?.dirty||FormName.controls['createdby']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['createdby']['errors']!['required']">
+                            Created By is required
+                        </span>
+                    </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
+                    <label for="">Modified by</label>
+                    <input type="number" class="form-control" formControlName="modifiedby">
+                    <div class="main-error" *ngIf="!FormName.controls['modifiedby']?.valid && (FormName.controls['modifiedby']?.dirty||FormName.controls['modifiedby']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['modifiedby']['errors']!['required']">
+                            Modified By is required
+                        </span>
+                    </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
-
         </div>
         <div class="form-action-btn">
             <button [disabled]="!FormName.valid" type="submit" class="btn">add</button>

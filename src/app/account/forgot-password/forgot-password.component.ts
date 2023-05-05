@@ -17,7 +17,7 @@ export class ForgotPasswordComponent implements OnInit {
   }
 
   FormName = new FormGroup({
-    inputfield: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
   })
 
   onsubmit() {

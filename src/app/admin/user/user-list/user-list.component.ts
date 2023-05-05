@@ -2,7 +2,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { ViewUserComponent } from './view-user/view-user.component';
+
 import { AddEditUserComponent } from './add-edit-user/add-edit-user.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { CommonService } from 'src/app/shared/service/common.service';
@@ -62,12 +62,7 @@ export class UserListComponent implements OnInit, AfterViewInit {
     });
   }
 
-  view() {
-    this.dialog.open(ViewUserComponent, {
-      width: '1000px',
-      autoFocus: false
-    });
-  }
+
 
   delete(id:any,index:any) {
     console.log(id);

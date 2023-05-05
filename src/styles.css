@@ -761,15 +761,16 @@ th.mat-header-cell {
 .account-form {
     width: 100%;
     background-color: #fff;
-    padding: 50px;
+    padding: 30px;
     max-width: 450px;
     border-radius: 20px;
     border: 1px solid #dee2e6!important;
 }
 
 .account-logo {
-    max-width: 70px;
-    margin-bottom: 35px;
+    /* max-width: 70px; */
+    margin-bottom: 20px;
+    margin: auto;
 }
 
 body .main-title {

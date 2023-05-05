@@ -5,7 +5,7 @@ import { ProductRoutingModule } from './product-routing.module';
 import { ProductComponent } from './product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { AddEditProductComponent } from './product-list/add-edit-product/add-edit-product.component';
-import { ViewProductComponent } from './product-list/view-product/view-product.component';
+
 import { DeleteProductComponent } from './product-list/delete-product/delete-product.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
@@ -15,7 +15,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     ProductComponent,
     ProductListComponent,
     AddEditProductComponent,
-    ViewProductComponent,
+
     DeleteProductComponent
   ],
   imports: [

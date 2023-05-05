@@ -1,21 +1,22 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { UserData } from '../model/userdata.model';
 @Injectable({
   providedIn: 'root'
 })
 export class CommonService {
-  private url = new BehaviorSubject<any>(null);
-  latestURL = this.url.asObservable();
-  private apiUrl = environment.baseUrl;
-  // httpOptions = {
-  //   headers: new HttpHeaders({
-  //     'Content-Type': 'application/json',
-  //   }),
-  // };
 
+  private apiUrl = environment.baseUrl;
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods':'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+      'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+    },
+    ),
+  };
   constructor(private http: HttpClient) { }
 
 
@@ -24,9 +25,6 @@ export class CommonService {
     return this.http.post(this.apiUrl + '/your end point goes here', data);
   }
   GetAllRoles(): Observable<any> {
-
-    console.log(this.apiUrl + 'Admin/GetAllRoles');
-
     return this.http.get(this.apiUrl + 'Admin/GetAllRoles');
   }
   postname(postData: any){
@@ -45,13 +43,12 @@ export class CommonService {
   )
   }
   updateCategory(id:any,UserData:any){
+    debugger
+
 
     return  this.http.put<UserData>('https://angular-data-f270d-default-rtdb.firebaseio.com/addemployee/'+id+'.json',UserData)
+
+
+
    }
-   deleteCategory(id:any){
-
-    return this.http.delete('https://angular-data-f270d-default-rtdb.firebaseio.com/addemployee/'+id+'.json')
-  }
-
-
 }

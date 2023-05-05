@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { AddEditContentComponent } from './add-edit-content/add-edit-content.component';
-import { ViewContentComponent } from './view-content/view-content.component';
+
 import { DeleteContentComponent } from './delete-content/delete-content.component';
 
 
@@ -14,7 +14,7 @@ import { DeleteContentComponent } from './delete-content/delete-content.componen
 })
 export class ContentListComponent implements OnInit, AfterViewInit {
 
-  displayedColumns: string[] = ['position', 'page', 'title', 'content', 'action'];
+  displayedColumns: string[] = ['id', 'empid','subject', 'startdate', 'enddate', 'action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -48,12 +48,7 @@ export class ContentListComponent implements OnInit, AfterViewInit {
     });
   }
 
-  view() {
-    this.dialog.open(ViewContentComponent, {
-      width: '1000px',
-      autoFocus: false
-    });
-  }
+ 
 
   delete() {
     this.dialog.open(DeleteContentComponent, {
@@ -65,20 +60,21 @@ export class ContentListComponent implements OnInit, AfterViewInit {
 }
 
 export interface PeriodicElement {
-  position: number;
-  page: string
-  title: string
-  content: string
+  id: number;
+  subject: string;
+  startdate:string;
+  enddate: string
   action: number;
+  empid:number;
 }
 
 
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
-  { position: 2, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
-  { position: 3, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
-  { position: 4, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
-  { position: 5, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
-  { position: 6, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
+  { id: 1,empid:10, subject: 'about us', startdate: 'Tue Apr 18 2023 00:00:00 GMT+0530 (India Standard Time)', enddate: 'Tue Apr 20 2023 00:00:00 GMT+0530 (India Standard Time)', action: 0 },
+  // { id: 2, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
+  // { id: 3, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
+  // { id: 4, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
+  // { id: 5, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
+  // { id: 6, page: 'about us', title: 'our history', content: '<ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n <ol>\n\t<li>lorem</li>\n</ol>\n  ', action: 0 },
 ];

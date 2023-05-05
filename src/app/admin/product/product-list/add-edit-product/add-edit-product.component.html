@@ -1,48 +1,45 @@
 <div class="form-round-block card">
     <form [formGroup]="FormName" (ngSubmit)="onsubmit()" class="form" novalidate>
         <mat-icon mat-dialog-close>close</mat-icon>
-        <h1 class="form-title">add/edit - product </h1>
+        <h1 class="form-title">add/edit - Time Sheet </h1>
         <div class="row">
 
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">input field</label>
-                    <input type="text" class="form-control" formControlName="inputfield">
-                    <div class="main-error" *ngIf="!FormName.controls['inputfield']?.valid && (FormName.controls['inputfield']?.dirty||FormName.controls['inputfield']?.touched)">
-                        <span class="error-msg" [hidden]="!FormName.controls['inputfield']['errors']!['required']">
-                            inputfield is required
-                        </span>
+                    <div class="form-group">
+                        <label for="">Employee Id </label>
+                        <input type="text" class="form-control" readonly>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">Name </label>
+                    <label for="">Subject / Work Topic </label>
                     <input type="text" class="form-control">
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
+                    <label for="">Start Time </label>
+                    <input type="time" class="form-control">
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
+                    <label for="">End time </label>
+                    <input type="time" class="form-control">
                 </div>
             </div>
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">Name </label>
-                    <input type="text" class="form-control">
+                    <label for="">Date </label>
+                    <input type="date" class="form-control">
                 </div>
             </div>
 
         </div>
         <div class="form-action-btn">
-            <button [disabled]="!FormName.valid" type="submit" class="btn">add</button>
+            <button [disabled]="!FormName.valid" type="submit" class="btn">submit</button>
             <button [disabled]="!FormName.valid" type="submit" class="btn">update</button>
             <button type="button" mat-dialog-close class="btn cancel">cancel</button>
         </div>

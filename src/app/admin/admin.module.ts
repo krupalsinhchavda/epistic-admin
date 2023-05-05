@@ -37,7 +37,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-
+import {MatSelectModule} from '@angular/material/select';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
 @NgModule({
   declarations: [
     AdminComponent,
@@ -80,7 +82,8 @@ import { ReactiveFormsModule,FormsModule } from '@angular/forms';
     MatInputModule,
     MatTableModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule,MatRadioModule,MatNativeDateModule
   ]
 })
 export class AdminModule { }

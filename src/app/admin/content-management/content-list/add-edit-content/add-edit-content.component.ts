@@ -10,7 +10,7 @@ import { CommonService } from 'src/app/shared/service/common.service';
   styleUrls: ['./add-edit-content.component.css']
 })
 export class AddEditContentComponent implements OnInit {
-
+model:any
   constructor(private toastr: ToastrService, private router: Router, private commonService: CommonService,) { }
 
   ngOnInit(): void {

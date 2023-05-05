@@ -1,22 +1,39 @@
 <div class="form-round-block card">
     <form [formGroup]="FormName" (ngSubmit)="onsubmit()" class="form" novalidate>
         <mat-icon mat-dialog-close>close</mat-icon>
-        <h1 class="form-title">add/edit - role</h1>
+        <h1 class="form-title">add/edit - Document</h1>
         <div class="row">
 
             <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
-                    <label for="">input field</label>
-                    <input type="text" class="form-control" formControlName="inputfield">
-                    <div class="main-error" *ngIf="!FormName.controls['inputfield']?.valid && (FormName.controls['inputfield']?.dirty||FormName.controls['inputfield']?.touched)">
-                        <span class="error-msg" [hidden]="!FormName.controls['inputfield']['errors']!['required']">
-                            inputfield is required
+                    <label for="">Employee id</label>
+                    <input type="text" class="form-control" formControlName="empid" readonly>
+                    
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">Document id</label>
+                    <input type="text" class="form-control" formControlName="docid" >
+                    <div class="main-error" *ngIf="!FormName.controls['docid']?.valid && (FormName.controls['docid']?.dirty||FormName.controls['docid']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['docid']['errors']!['required']">
+                            Document Id is required
                         </span>
                     </div>
                 </div>
             </div>
-
             <div class="col-12 col-md-6 col-xl-4">
+                <div class="form-group">
+                    <label for="">Document </label>
+                    <input type="file" class="form-control" formControlName="file" multiple accept="application/pdf" >
+                    <div class="main-error" *ngIf="!FormName.controls['file']?.valid && (FormName.controls['file']?.dirty||FormName.controls['file']?.touched)">
+                        <span class="error-msg" [hidden]="!FormName.controls['file']['errors']!['required']">
+                            File Id is required
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 col-md-6 col-xl-4">
                 <div class="form-group">
                     <label for="">permission level</label>
                     <select class="form-control">
@@ -27,13 +44,8 @@
                         <option value="">copy manager</option>
                     </select>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-xl-4">
-                <div class="form-group">
-                    <label for="">Abbreviation </label>
-                    <input type="text" class="form-control">
-                </div>
-            </div>
+            </div> -->
+    
 
         </div>
         <div class="form-action-btn">

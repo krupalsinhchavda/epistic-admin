@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { AddEditRoleComponent } from './add-edit-role/add-edit-role.component';
-import { ViewRoleComponent } from './view-role/view-role.component';
 import { DeleteRoleComponent } from './delete-role/delete-role.component';
 
 @Component({
@@ -13,7 +12,7 @@ import { DeleteRoleComponent } from './delete-role/delete-role.component';
 })
 export class RolesListComponent implements OnInit {
 
-  displayedColumns: string[] = ['position', 'rolename', 'abbreviation', 'submission', 'review', 'copyediting', 'production', 'action'];
+  displayedColumns: string[] = ['id', 'empid', 'docid', 'file','action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -47,12 +46,7 @@ export class RolesListComponent implements OnInit {
     });
   }
 
-  view() {
-    this.dialog.open(ViewRoleComponent, {
-      width: '1000px',
-      autoFocus: false
-    });
-  }
+ 
 
   delete() {
     this.dialog.open(DeleteRoleComponent, {
@@ -66,25 +60,22 @@ export class RolesListComponent implements OnInit {
 
 
 export interface PeriodicElement {
-  position: number;
-  rolename: string;
-  abbreviation: number;
-  submission: number;
-  review: number;
-  copyediting: number;
-  production: number;
+  id: number;
+  empid: number;
+  docid: number;
+  file: string;
   action: number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, rolename: 'journal manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 2, rolename: 'journal editor', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 3, rolename: 'production manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 4, rolename: 'section manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 5, rolename: 'copy manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 6, rolename: 'designer', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 7, rolename: 'journal manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 8, rolename: 'journal manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 9, rolename: 'journal manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
-  { position: 10, rolename: 'journal manager', abbreviation: 0, submission: 0, review: 0, copyediting: 0, production: 0, action: 0 },
+  { id: 1, empid: 2, docid: 0, file: '', action: 0 },
+  { id: 2, empid: 3, docid: 2, file: '', action: 0 },
+  { id: 3, empid: 4, docid: 5, file: '', action: 0 },
+  { id: 4, empid: 5, docid: 8, file: '', action: 0 },
+  { id: 5, empid: 6, docid: 7, file: '', action: 0 },
+  // { id: 6, empid: 'designer', docid: 0, file: 0, action: 0 },
+  // { id: 7, empid: 'journal manager', docid: 0, file: 0, action: 0 },
+  // { id: 8, empid: 'journal manager', docid: 0, file: 0, action: 0 },
+  // { id: 9, empid: 'journal manager', docid: 0, file: 0, action: 0 },
+  // { id: 10, empid: 'journal manager', docid: 0, file: 0, action: 0 },
 ];

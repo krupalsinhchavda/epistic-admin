@@ -17,7 +17,9 @@ export class AddEditRoleComponent implements OnInit {
   }
 
   FormName = new FormGroup({
-    inputfield: new FormControl('', [Validators.required]),
+    empid: new FormControl('', [Validators.required]),
+    docid: new FormControl('', [Validators.required]),
+    file: new FormControl('', [Validators.required]),
   })
 
   onsubmit() {
